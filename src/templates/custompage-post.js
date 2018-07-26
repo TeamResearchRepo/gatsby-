@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 class CustomPagePost extends Component {
     render() {
         console.log(this.props)
-        if (this.props.data.contentfulCustomPages != null) {
-            const { pageContent } = this.props.data.contentfulCustomPages
+        const { pageContent } = this.props.data.contentfulCustomPages
+        if (pageContent) {
             return (
 
                 <div dangerouslySetInnerHTML={{ __html: pageContent.childMarkdownRemark.html }} />
