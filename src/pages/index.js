@@ -10,6 +10,7 @@ const ProductPost = ({ node }) => {
   )
 }
 
+
 const IndexPage = (props) => {
   return (
     <div>
@@ -17,8 +18,11 @@ const IndexPage = (props) => {
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <Link to="/page-2/">Go to page 2</Link>
-      <hr/>
+      <hr />
       {props.data.allContentfulProduct.edges.map((edge) => <ProductPost key={edge.node.id} node={edge.node} />)}
+
+     
+
     </div>
   )
 }
@@ -26,6 +30,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
     query pageQuery {
+
       allContentfulProduct (
         filter: {
                 node_locale: {eq: "en-US"}

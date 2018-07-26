@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
+import MainMenu from '../components/Menu/menuItem'
+
 import './index.css'
 
 const Layout = ({ children, data }) => (
@@ -14,7 +16,8 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header siteTitle={data.site.siteMetadata.title} menu={data} />
+    {/* <MainMenu menu={data}/> */}
     <div
       style={{
         margin: '0 auto',
@@ -40,6 +43,28 @@ export const query = graphql`
       siteMetadata {
         title
       }
-    }
-  }
+    },
+    allContentfulCustomPages (
+      filter: {
+              node_locale: {eq: "en-US"}
+          },
+          sort: {
+              fields: [pageId], order: ASC
+          }
+    )
+    {
+      edges {
+        node {
+          id
+          pageId
+          menuName
+          pageName
+          pageContent{
+            pageContent
+          }
+        }
+      }
+  } 
+}
 `
+
