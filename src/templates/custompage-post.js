@@ -5,13 +5,11 @@ class CustomPagePost extends Component {
     render() {
         console.log(this.props)
         const { pageContent } = this.props.data.contentfulCustomPages
-        if (pageContent) {
-            return (
-
-                <div dangerouslySetInnerHTML={{ __html: pageContent.childMarkdownRemark.html }} />
-
-            )
-        }
+        return (
+         
+            <div dangerouslySetInnerHTML={{ __html: pageContent.childMarkdownRemark.html }} />
+           
+        )
     }
 }
 

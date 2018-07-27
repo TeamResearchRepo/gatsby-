@@ -15,7 +15,9 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
+      
     />
+    
     <Header siteTitle={data.site.siteMetadata.title} menu={data} />
     {/* <MainMenu menu={data}/> */}
     <div

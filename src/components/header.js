@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import MainMenu from '../components/Menu/menuItem'
+
 const Header = ({ siteTitle, menu }) => (
   <div
     style={{
@@ -28,6 +29,7 @@ const Header = ({ siteTitle, menu }) => (
 
       </h1>
       <MainMenu menu={menu} />
+     
     </div>
   </div>
 )

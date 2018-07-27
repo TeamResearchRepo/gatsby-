@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
+import Search from "../components/Search/search.js";
 const ProductPost = ({ node }) => {
   return (
     <div>
@@ -20,9 +20,6 @@ const IndexPage = (props) => {
       <Link to="/page-2/">Go to page 2</Link>
       <hr />
       {props.data.allContentfulProduct.edges.map((edge) => <ProductPost key={edge.node.id} node={edge.node} />)}
-
-     
-
     </div>
   )
 }
