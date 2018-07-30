@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 class CustomPagePost extends Component {
     render() {
         console.log(this.props)
-        if (this.props.data.contentfulCustomPages != 'undefined') {
+        if (this.props.data.contentfulCustomPages != null) {
         const { pageContent } = this.props.data.contentfulCustomPages
         
             return (
@@ -15,6 +15,7 @@ class CustomPagePost extends Component {
         }
     }
 }
+
 
 CustomPagePost.PropTypes = {
     data: PropTypes.object.isRequired
